@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- edit.ejs -->
+
+    <h1>Edit Appointment</h1>
+    <form action="/update/<%= appointment.id %>" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" value="<%= appointment.username %>" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="<%= appointment.email %>" required>
+        <label for="phonenumber">Phone Number:</label>
+        <input type="tel" name="phonenumber" value="<%= appointment.phonenumber %>" required>
+        <button type="submit">Update</button>
+    </form>
+
+</body>
+
+</html>

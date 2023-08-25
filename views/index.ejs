@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Appointments:</h2>
+    <ul>
+        <% appointments.forEach(appointment=> { %>
+            <li>
+                <%= appointment.username %>, <%= appointment.email %>, <%= appointment.phonenumber %>
+                            <form action="/edit/<%= appointment.id %>" method="GET" style="display: inline;">
+                                <button type="submit">Edit</button>
+                            </form>
+                            <form action="/delete/<%= appointment.id %>" method="POST" style="display: inline;">
+                                <button type="submit">Delete</button>
+                            </form>
+            </li>
+            <% }); %>
+    </ul>
+    <form action="/add"><button type="submit">Add New Appointment</button></form>
+
+</body>
+
+</html>
